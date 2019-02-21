@@ -1,21 +1,24 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer, createStackNavigator } from "react-navigation";
+import { YellowBox } from "react-native";
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
+import Login from "./src/pages/Login";
+import Home from "./src/pages/Home";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+YellowBox.ignoreWarnings(["Setting a timer for a long period of time"]);
+
+const AppNavigator = createStackNavigator(
+  {
+    Home,
+    Login
   },
-});
+  {
+    initialRouteName: "Login",
+    defaultNavigationOptions: {
+      header: null
+    }
+  }
+);
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default AppContainer;
