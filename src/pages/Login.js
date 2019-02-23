@@ -20,7 +20,7 @@ export default class Login extends React.Component {
 
   componentDidMount() {
     const config = {
-      apiKey: "AIzaSyCeHhG03G7hbBq1-FClBMnYrKfrslp--5E",
+      apiKey: "",
       authDomain: "contatosos-82cf5.firebaseapp.com",
       databaseURL: "https://contatosos-82cf5.firebaseio.com",
       projectId: "contatosos-82cf5",

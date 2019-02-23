@@ -38,8 +38,7 @@ export default class Home extends React.Component {
   async _getContacts() {
     this.setState({ isLoadingGet: true, warning: "" });
 
-    // const { status } = await Permissions.askAsync(Permissions.CONTACTS);
-    const { status } = await Permissions.askAsync(...types);
+    const { status } = await Permissions.askAsync(Permissions.CONTACTS);
 
     if (status === "granted") {
       try {
